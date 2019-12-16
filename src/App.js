@@ -1,24 +1,28 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
+
+let greeting = 'good morning'
+const currentHour = new Date().getHours()
+
+const headingStyle = {
+    fontSize: '50px',
+    fontWeight: 'bold',
+    borderBottom: '5px solid black'
+}
+
+if (currentHour >= 12 && currentHour <= 16) {
+    greeting = 'good afternoon'
+    headingStyle.color = 'green'
+}
+if (currentHour >= 16 && currentHour <= 24) {
+    greeting = 'good evening'
+    headingStyle.color = 'blue'
+}
 
 function App() {
     return (
         <div className='App'>
-            <header className='App-header'>
-                <img src={logo} className='App-logo' alt='logo' />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload...
-                </p>
-                <a
-                    className='App-link'
-                    href='https://reactjs.org'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                >
-                    Learn React
-                </a>
-            </header>
+            <h1 style={headingStyle}>{greeting}</h1>
         </div>
     )
 }
