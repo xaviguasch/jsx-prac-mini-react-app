@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.css'
 
 let greeting = 'good morning'
 const currentHour = new Date().getHours()
@@ -19,12 +18,8 @@ if (currentHour >= 16 && currentHour <= 24) {
     headingStyle.color = 'blue'
 }
 
-function App() {
-    return (
-        <div className='App'>
-            <h1 style={headingStyle}>{greeting}</h1>
-        </div>
-    )
+function Heading() {
+    return <h1 style={headingStyle}>{greeting}</h1>
 }
 
-export default App
+export default Heading
